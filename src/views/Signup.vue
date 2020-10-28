@@ -9,6 +9,13 @@
 		/>
 		<br />
 		<input
+			type="text"
+			placeholder="Full Name"
+			v-model="fullName"
+			required
+		/>
+		<br />
+		<input
 			type="password"
 			placeholder="Password"
 			v-model="password"
@@ -34,6 +41,7 @@ export default {
 	data: function() {
 		return {
 			email: '',
+			fullName: '',
 			password: '',
 			error: '',
 		}
@@ -42,6 +50,7 @@ export default {
 		signUp() {
 			if (
 				this.email !== '' &&
+				this.fullName !== '' &&
 				this.password !== ''
 			) {
 				firebase
@@ -51,6 +60,7 @@ export default {
 						this.password,
 					)
 					.then((data) =>
+					firebase.database()
 						console.log(
 							'Data',
 							data.user,
