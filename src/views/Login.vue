@@ -20,9 +20,9 @@
 			Login
 		</button>
 		<p>
-			If you already have an account
-			<router-link to="/login"
-				>Login</router-link
+			If you do not have an account,
+			<router-link to="/signup"
+				>create one.</router-link
 			>
 		</p>
 	</div>
